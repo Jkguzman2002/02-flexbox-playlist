@@ -53,3 +53,13 @@ header h1 {
 .overlay {
  display: none;
 }
+
+/* Flex container for albums */
+.albums {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap; /* Prevent wrapping, keeps row horizontal */
+  align-items: flex-start; /* Ensures horizontal alignment */
+  gap: 24px; /* Optional: space between albums */
+  overflow-x: auto; /* Optional: add horizontal scrolling if needed */
+}
