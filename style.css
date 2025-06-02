@@ -24,42 +24,80 @@ header h1 {
 
 /* Album card styling */
 .album {
+  width: 260px;
+  height: 360px;
+  display: flex;
+  flex-direction: column;
   position: relative;
-  width: 220px; 
-  background: #fff;
-  border: 1px solid #ddd;
+  background: #222;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  transition: transform 0.2s;
 }
 
 .album img {
   width: 100%;
+  height: 180px;
+  object-fit: cover;
   display: block;
 }
 
 .info {
-  padding: 10px;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem 1rem 1rem 1rem;
+  background: #232323;
+  color: #fff;
+  height: calc(100% - 180px);
+  box-sizing: border-box;
 }
 
 .info h3 {
+  margin: 0 0 0.5rem 0;
   font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
-  margin-bottom: 5px;
+  font-size: 1.15rem;
+  font-weight: 700;
 }
 
 .info p {
-  font-size: 14px;
-  color: #666;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.98rem;
+  color: #bdbdbd;
 }
 
 .overlay {
- display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 180px;
+  background: rgba(30,30,30,0.85);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
+  font-size: 0.98rem;
+  text-align: center;
+}
+
+.album:hover .overlay {
+  opacity: 1;
 }
 
 /* Flex container for albums */
 .albums {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap; /* Prevent wrapping, keeps row horizontal */
-  align-items: flex-start; /* Ensures horizontal alignment */
-  gap: 24px; /* Optional: space between albums */
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
   overflow-x: auto; /* Optional: add horizontal scrolling if needed */
 }
