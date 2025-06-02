@@ -96,8 +96,33 @@ header h1 {
 /* Flex container for albums */
 .albums {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
+  flex-wrap: nowrap;
   gap: 2rem;
-  justify-content: center;
-  overflow-x: auto; /* Optional: add horizontal scrolling if needed */
+  justify-content: flex-start;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  /* Show only 4 cards at a time */
+  width: calc((260px * 4) + (2rem * 3));
+  max-width: 100%;
+  margin: 0 auto;
+  /* Hide scrollbar for aesthetics (optional) */
+  scrollbar-width: thin;
+  scrollbar-color: #888 #232323;
+}
+
+.albums::-webkit-scrollbar {
+  height: 10px;
+}
+.albums::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+.albums::-webkit-scrollbar-track {
+  background: #232323;
+  border-radius: 5px;
+}
+
+.album {
+  flex: 0 0 260px;
 }
