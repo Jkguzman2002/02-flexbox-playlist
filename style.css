@@ -126,3 +126,21 @@ header h1 {
 .album {
   flex: 0 0 260px;
 }
+
+/* Media Queries */
+@media (max-width: 700px) {
+  .albums {
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+    overflow-x: unset;
+    overflow-y: visible;
+    align-items: center;
+  }
+  .album {
+    width: 95vw;
+    max-width: 420px;
+    min-width: 0;
+    flex: none;
+  }
+}
